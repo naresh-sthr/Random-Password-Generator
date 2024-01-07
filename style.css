@@ -56,3 +56,29 @@ body{
   border-bottom: 2px solid rgb(118, 196, 0);
   padding-bottom: 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .container{
+    width: 90%;
+    margin-inline: auto;
+  }
+  h1{
+    font-size: 8vw;
+    display: block;
+  }
+  .display{
+    width: 100%;
+    padding: 20px;
+  }
+  .display input{
+    width: 100%;
+    font-size: 18px;
+  }
+  .display img{
+    width: 20px;
+  }
+  .container button{
+    padding: 10px 15px;
+    font-size: 5vw;
+  }
+}
