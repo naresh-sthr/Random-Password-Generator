@@ -11,10 +11,22 @@ const options = {
 async function main() {
   try {
     const response = await fetch(url, options);
-    const result = await response.text();  // Using .text() instead of .json()
-    password.value = result;  // Set the password input field with the result
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    const result = await response.text();  // Get the raw text response
+    console.log(result);  // Log the result to check what is returned
+    
+    // Check if the result contains the password directly or needs parsing
+    const passwordMatch = result.match(/Random password: (.+)/);  // Adjust regex as needed based on the API response
+    if (passwordMatch && passwordMatch[1]) {
+      password.value = passwordMatch[1];  // Set the password input field with the correct password
+    } else {
+      // If no match, assume the result is the password directly
+      password.value = result;
+    }
   } catch (error) {
-    console.error(error);
+    console.error('Error:', error);
   }
 }
 
