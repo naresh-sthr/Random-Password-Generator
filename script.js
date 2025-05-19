@@ -1,10 +1,10 @@
 let password = document.querySelector('#input-txt');
-const url = 'https://password-generator-by-api-ninjas.p.rapidapi.com/v1/passwordgenerator?length=15&exclude_numbers=false&exclude_special_chars=false';
+const url = 'https://random-password-generator5.p.rapidapi.com/random-password/index.php?length=10&lower_case=true&upper_case=true&numbers=true&symbols=true';
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'fe40e8244amsh83947b0d58bf458p196ccejsnb97101ec693c',
-		'X-RapidAPI-Host': 'password-generator-by-api-ninjas.p.rapidapi.com'
+		'X-RapidAPI-Key': 'f10a9955b5msha85578bc3aca352p11f23ejsn25f6072b7bf4',
+		'X-RapidAPI-Host': 'random-password-generator5.p.rapidapi.com'
 	}
 };
 
